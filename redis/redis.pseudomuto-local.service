@@ -1,0 +1,6 @@
+[Unit]
+Description=A primary redis server
+
+[Service]
+ExecStart=/usr/bin/docker run -d -h %n --name %n pseudomuto/redis_master
+ExecStop=/usr/bin/docker stop -t 3 %n
