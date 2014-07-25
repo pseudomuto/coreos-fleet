@@ -2,5 +2,5 @@
 Description=A primary redis server
 
 [Service]
-ExecStart=/bin/bash -c "HOST_IP=$(/bin/ifconfig eth0 | awk '/inet /{print $2}') && exec /usr/bin/docker run -h %n --name %n -p $HOST_IP::6379 pseudomuto/redis"
+ExecStart=/bin/bash -c "HOST_IP=$(/bin/ifconfig eth0 | awk '/inet /{print $2}') && exec /usr/bin/docker run -h %n --name %n -p $HOST_IP::6379 pseudomuto/redis_master"
 ExecStop=/usr/bin/docker stop -t 3 %n
